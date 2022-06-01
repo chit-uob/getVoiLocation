@@ -1,3 +1,6 @@
 secret.ini
 token_test.py
 temp.json
+
+data/location_data/*
+!data/location_data/.gitkeep
