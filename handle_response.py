@@ -14,15 +14,15 @@ def put_inside_data_file(date_string_precise_to_hour, record_json):
         with open(Path(f"data/location_data/scooter_data_{current_date_string_precise_to_hour}.json"), 'ab+') as f:
             f.seek(-3, os.SEEK_END)
             f.truncate()
-        with open(Path(f"data/location_data/scooter_data_{current_date_string_precise_to_hour}.json"), 'a') as f:
+        with open(Path(f"data/location_data/scooter_data_{current_date_string_precise_to_hour}.json"), 'a', newline='\n') as f:
             f.write("\n]\n")
     current_date_string_precise_to_hour = date_string_precise_to_hour
 
     data_file_path = Path(f"data/location_data/scooter_data_{date_string_precise_to_hour}.json")
     if not data_file_path.is_file():
-        with open(data_file_path, 'w') as f:
+        with open(data_file_path, 'w', newline='\n') as f:
             f.write("[\n")
-    with open(data_file_path, 'a') as f:
+    with open(data_file_path, 'a', newline='\n') as f:
         f.write(json.dumps(record_json))
         f.write(",\n")
 

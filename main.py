@@ -1,5 +1,4 @@
 import time
-
 import handle_response
 import make_api_requests
 
