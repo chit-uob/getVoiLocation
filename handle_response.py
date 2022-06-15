@@ -12,7 +12,7 @@ def put_inside_data_file(date_string_precise_to_hour, record_json):
     if current_date_string_precise_to_hour != "" and \
             current_date_string_precise_to_hour != date_string_precise_to_hour:
         with open(Path(f"data/location_data/scooter_data_{current_date_string_precise_to_hour}.json"), 'ab+') as f:
-            f.seek(-3, os.SEEK_END)
+            f.seek(-2, os.SEEK_END)
             f.truncate()
         with open(Path(f"data/location_data/scooter_data_{current_date_string_precise_to_hour}.json"), 'a', newline='\n') as f:
             f.write("\n]\n")
